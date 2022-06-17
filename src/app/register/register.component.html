@@ -1,3 +1,52 @@
-<p>
-  register works!
-</p>
+<mat-card class="example-card">
+
+  <mat-card>
+   <mat-icon>how_to_reg</mat-icon> Sign Up
+  </mat-card>
+
+  <mat-form-field style="margin: 15px" appearance="fill">
+    <mat-label>
+      First Name</mat-label>
+    <input  name="fname" [(ngModel)]="fname" matInput>
+  </mat-form-field>
+
+
+  <mat-form-field style="margin: 15px" appearance="fill">
+    <mat-label>
+      Last Name</mat-label>
+    <input   name="lname" [(ngModel)]="lname" matInput>
+  </mat-form-field>
+
+  <mat-form-field style="margin: 15px" appearance="fill">
+    <mat-label>
+      <mat-icon>account_circle</mat-icon>
+      Email Id</mat-label>
+    <input type="email"  name="email" [(ngModel)]="email" matInput>
+  </mat-form-field>
+
+  <mat-form-field style="margin: 15px" appearance="fill">
+    <mat-label>
+      <mat-icon>password</mat-icon>
+      Password
+    </mat-label>
+    <input type="password"   name="password" [(ngModel)]="password" matInput>
+  </mat-form-field>
+
+
+  <mat-form-field style="margin: 15px" appearance="fill">
+    <mat-label>
+      <mat-icon>password</mat-icon>
+      Confirm Password
+    </mat-label>
+    <input type="password"   name="cpassword" [(ngModel)]="cpassword" matInput>
+  </mat-form-field>
+
+  <mat-form-field style="margin: 15px" appearance="fill">
+    <mat-label>Date of Birth</mat-label>
+    <input name="date" [(ngModel)]="date" type="date" matInput>
+  </mat-form-field>
+
+  <button (click)="submit()" mat-raised-button color="primary">
+    <mat-icon>person_add</mat-icon>Sign In</button>
+
+</mat-card>

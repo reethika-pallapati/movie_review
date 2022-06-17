@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-import { Movie } from "../Movie";
+import { Movie } from "../Models/Movie";
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 
@@ -56,6 +56,15 @@ export class ReviewComponent implements OnInit {
         this.review
       );
       this.from.emit(temp);
+
+  this.name = "";
+  this.gerner = "";
+  this.cast = "";
+  this.type = "";
+  this.rating = 0;
+  this.date = "";
+  this.review = "";
+
       this.openSnackBar("Review Uploaded Successfully", "OK :)");
     }
 

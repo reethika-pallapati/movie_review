@@ -1,37 +1,62 @@
 <div class="home">
+  <mat-card>
+    <p>
+      <mat-toolbar>
+        <span>The Popcorn Reviewer</span>
+        <span class="example-spacer"></span>
+        <button
+          mat-icon-button
+          class="example-icon favorite-icon"
+          aria-label="Example icon-button with movie icon"
+        >
+          <mat-icon>movie_filter</mat-icon>
+        </button>
+      </mat-toolbar>
+    </p>
 
-<mat-card>
-  <p>
-    <mat-toolbar>
-    <span>Popcorn Reviewer</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with movie icon">
-      <mat-icon>movie_filter</mat-icon>
-    </button>
-  </mat-toolbar>
-  </p>
-
-  <mat-tab-group>
-    <mat-tab label="Movie Reviews"> <app-movies [movies]="movies" ti="title 123"  ></app-movies>  </mat-tab>
-    <mat-tab label="Write a Review"> <app-review (from)="addMovie($event)" ></app-review> </mat-tab>
-    <mat-tab label="Sign Up"> <app-register></app-register> </mat-tab>
-    <mat-tab label="Sign In"> <app-login></app-login> </mat-tab>
-    <mat-tab label="Developer Details"> 
-      <h3>
-        Course: 
-        CISC 594-90- O-2022/Late Spring - Software Principles and Techniques
-      </h3>
-      <h4>
-        Developed by: Reethika Pallapati
-      </h4>
-
-
-
-    
-    </mat-tab>
-  </mat-tab-group>
-</mat-card>
-
+    <mat-tab-group>
+      <mat-tab label="Movie Reviews">
+        <app-movies [movies]="movies" ti="title 123"></app-movies>
+      </mat-tab>
+      <mat-tab *ngIf="auth.status === false" label="Sign Up">
+        <app-register (register)="register($event)"></app-register>
+      </mat-tab>
+      <mat-tab
+        *ngIf="auth.status === true && auth.index !== -1"
+        label="Write a Review"
+      >
+        <app-review (from)="addMovie($event)"></app-review>
+      </mat-tab>
+      <mat-tab *ngIf="auth.status === false" label="Sign In">
+        <app-login (login)="login($event)"></app-login>
+      </mat-tab>
+      <mat-tab
+        *ngIf="auth.status === true && auth.index !== -1"
+        label="Sign Out"
+      >
+        <br />
+        <mat-icon> assignment_ind </mat-icon>
+        Hello {{ users[auth.index].fname }}
+        <br /><br />
+        <button (click)="logout()" mat-raised-button color="primary">
+          <mat-icon>exit_to_app</mat-icon>Sign Out
+        </button>
+      </mat-tab>
+      <mat-tab label="Developer Details">
+        <br />
+        <span>
+          <mat-icon> school </mat-icon>
+          Course: CISC 594-90- O-2022/Late Spring - Software Principles and
+          Techniques
+        </span>
+        <br />
+        <br />
+       
+        <span>
+          <mat-icon> face_retouching_natural </mat-icon>
+          Developed by: Reethika Pallapati
+        </span>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
 </div>
-
-
