@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MoviesComponent } from './movies.component';
+import { By } from '@angular/platform-browser';
+
 
 describe('MoviesComponent', () => {
   let component: MoviesComponent;
@@ -22,4 +24,13 @@ describe('MoviesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Movie List Generated', (() => {
+    let fixture = TestBed.createComponent(MoviesComponent);
+      fixture.detectChanges();
+        let input = fixture.debugElement.query(By.css('.movie_list'));
+        let el = input.nativeElement;
+        expect(el).toBeTruthy();
+    })
+  );
 });

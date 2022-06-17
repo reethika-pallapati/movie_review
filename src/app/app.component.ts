@@ -132,10 +132,10 @@ export class AppComponent {
     if(index != -1){
       this.auth.status = true;
       this.auth.index = index;
+
       this.openSnackBar(`Welcome ${this.users[index].fname}`, "ok");
     }else{
       // this.auth.status = false;
-      // console.log('login fail', event);
       this.auth.status = false;
       this.auth.index = -1;
       this.openSnackBar("Incorrect Username or Password", "Try Again");

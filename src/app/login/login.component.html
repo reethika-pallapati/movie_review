@@ -13,7 +13,7 @@
       <mat-label>
         <mat-icon>account_circle</mat-icon>
         Email Id</mat-label>
-      <input type="email" name="email" [(ngModel)]="email" matInput>
+      <input class="email" type="email" name="email" [(ngModel)]="email" matInput>
     </mat-form-field>
   
     <mat-form-field style="margin: 15px" appearance="fill">
@@ -21,7 +21,7 @@
         <mat-icon>password</mat-icon>
         Password
       </mat-label>
-      <input type="password"  name="password" [(ngModel)]="password" matInput>
+      <input class="password" type="password"  name="password" [(ngModel)]="password" matInput>
     </mat-form-field>
   
     <button (click)="submit()" mat-raised-button color="primary">

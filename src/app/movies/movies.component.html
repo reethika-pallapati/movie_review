@@ -5,7 +5,7 @@
 <div class="movies" *ngFor="let m of movies; let i = index">
   <mat-card class="example-card">
     <mat-card-header>
-      <div *ngIf="m.type === 'movie'">
+      <div class="movie_list" *ngIf="m.type === 'movie'">
         <button
           mat-icon-button
           class="example-icon favorite-icon"
