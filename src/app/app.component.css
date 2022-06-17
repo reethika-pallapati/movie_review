@@ -1,0 +1,9 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .home{
+    width: 100%;
+    margin: auto;
+    max-width: 900px;
+}

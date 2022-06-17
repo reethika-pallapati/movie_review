@@ -1,0 +1,37 @@
+<div class="home">
+
+<mat-card>
+  <p>
+    <mat-toolbar>
+    <span>Popcorn Reviewer</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with movie icon">
+      <mat-icon>movie_filter</mat-icon>
+    </button>
+  </mat-toolbar>
+  </p>
+
+  <mat-tab-group>
+    <mat-tab label="Movie Reviews"> <app-movies [movies]="movies" ti="title 123"  ></app-movies>  </mat-tab>
+    <mat-tab label="Write a Review"> <app-review (from)="addMovie($event)" ></app-review> </mat-tab>
+    <mat-tab label="Sign Up"> <app-register></app-register> </mat-tab>
+    <mat-tab label="Sign In"> <app-login></app-login> </mat-tab>
+    <mat-tab label="Developer Details"> 
+      <h3>
+        Course: 
+        CISC 594-90- O-2022/Late Spring - Software Principles and Techniques
+      </h3>
+      <h4>
+        Developed by: Reethika Pallapati
+      </h4>
+
+
+
+    
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+</div>
+
+

@@ -1,0 +1,56 @@
+<mat-card class="example-card">
+
+  <mat-card>Review Form</mat-card>
+
+  
+<mat-form-field style="margin: 15px" appearance="fill">
+  <mat-label>Title</mat-label>
+  <input   name="name" [(ngModel)]="name" matInput>
+</mat-form-field>
+
+<mat-form-field style="margin: 15px" appearance="fill">
+  <mat-label>Gerner</mat-label>
+  <input name="gerner" [(ngModel)]="gerner" matInput>
+</mat-form-field>
+
+<mat-form-field style="margin: 15px" appearance="fill">
+  <mat-label>cast</mat-label>
+  <input name="cast" [(ngModel)]="cast" matInput>
+</mat-form-field>
+
+<mat-form-field style="margin: 15px" appearance="fill">
+  <mat-label >Type</mat-label>
+  <mat-select name="type" [(ngModel)]="type">
+    <mat-option value="movie">Movie</mat-option>
+    <mat-option value="series">Web Series</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field style="margin: 15px" appearance="fill">
+  <mat-label >Rating</mat-label>
+  <mat-select name="rating" [(ngModel)]="rating">
+    <mat-option value=1>One</mat-option>
+    <mat-option value=2>Two</mat-option>
+    <mat-option value=3>Three</mat-option>
+    <mat-option value=4>Four</mat-option>
+    <mat-option value=5>Five</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field style="margin: 15px" appearance="fill">
+  <mat-label>Date</mat-label>
+  <input name="date" [(ngModel)]="date" type="date" matInput>
+</mat-form-field>
+
+
+
+<mat-form-field  style="margin: 15px" appearance="fill">
+  <mat-label>Review</mat-label>
+  <textarea name="review" [(ngModel)]="review" matInput></textarea>
+</mat-form-field>
+
+
+<button (click)="submit()" mat-raised-button color="primary">Submit</button>
+
+</mat-card>
+

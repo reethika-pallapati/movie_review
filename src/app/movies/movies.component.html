@@ -1,0 +1,89 @@
+<span (click)="test()">
+
+</span>
+
+<div class="movies" *ngFor="let m of movies; let i = index">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div *ngIf="m.type === 'movie'">
+        <button
+          mat-icon-button
+          class="example-icon favorite-icon"
+          aria-label="Example icon-button with movie icon"
+        >
+          <mat-icon>movie</mat-icon>
+        </button>
+      </div>
+      <div *ngIf="m.type === 'series'">
+        <button
+          mat-icon-button
+          class="example-icon favorite-icon"
+          aria-label="Example icon-button with movie icon"
+        >
+          <mat-icon>theater_comedy</mat-icon>
+        </button>
+      </div>
+
+      <mat-card-title>{{ m.name }}</mat-card-title>
+      <mat-card-subtitle>{{ m.gerner }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="assets/{{ (i + 1) % 10 }}.png"
+      alt="Photo of a Shiba Inu"
+    />
+    <mat-card-content>
+      <div *ngIf="m.rating === 1">
+        <mat-icon>star</mat-icon>
+      </div>
+
+      <div *ngIf="m.rating === 2">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+      </div>
+
+      <div *ngIf="m.rating === 3">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+      </div>
+
+      <div *ngIf="m.rating === 4">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+      </div>
+
+      <div *ngIf="m.rating === 5">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+      </div>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Cast</mat-label>
+          <input disable matInput value="{{ m.cast }}" />
+        </mat-form-field>
+      </form>
+
+      <button mat-button>
+        <mat-icon>calendar_month</mat-icon> {{ m.date }}
+      </button>
+
+      <p>
+        {{ m.review }}
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button><mat-icon class="like">thumb_up</mat-icon></button>
+      <button mat-button>
+        <mat-icon class="dislike">thumb_down</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
